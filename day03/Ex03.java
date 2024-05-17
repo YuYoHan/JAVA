@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class Ex03 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String name, result;
+		int age;
+		int height;
+
+		System.out.println("이름 : ");
+		name = sc.next();
+		System.out.println("나이 : ");
+		age = sc.nextInt();
+		System.out.println("키 : ");
+		height = sc.nextInt();
+
+		if(age >= 30 && height <= 170) {
+			result = name + "님 입장 가능";
+		} else {
+			result = name + "입장 불가능";
+		}
+		System.out.println(result);
+	}
+}

@@ -1,0 +1,20 @@
+import java.util.Scanner;
+class Ex15 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num;
+
+		System.out.println("임의의 수");
+		num = sc.nextInt();
+
+		if(num >= 0) {
+			num += 100;
+			System.out.println(num);
+			System.out.println("작업종료");
+		} else {
+			num = num * num;
+			System.out.println(num);
+			System.out.println("작업종료");
+		}
+	}
+}
