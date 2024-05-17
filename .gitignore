@@ -1,4 +1,4 @@
-
+.idea
 *.pb
 *.iml
 *.xml
@@ -16,7 +16,6 @@ day04/untitled/.idea/sonarlint/securityhotspotstore/a/9/a9a0f80e89bf55f9e0813420
 day04/untitled/.idea/sonarlint/securityhotspotstore/a/f/afe103942ee94e817bb5564d1b3785098a0cc84d
 day04/untitled/.idea/sonarlint/securityhotspotstore/c/5/c58dfd019c9dbf650dac9b0294a7245cb5d40f43
 day04/untitled/.idea/sonarlint/securityhotspotstore/e/8/e8f66f13d8b1f84dab39090971a2ef9a0115215b
-day04/untitled/src/Main.java
 day05/untitled/.idea/sonarlint/securityhotspotstore/f/c/fc0f776ef1edb1f00207a975f310e759fe00f59c
 day05/untitled/.idea/sonarlint/securityhotspotstore/d/f/df2fc564301049a08d1c21e4e531936c5ec92f82
 day05/untitled/.idea/sonarlint/securityhotspotstore/d/8/d893ae96a0090df4559e0fe7e90ae3e6ff67cab9
@@ -33,7 +32,6 @@ day05/untitled/.idea/sonarlint/issuestore/9/7/97efb564223b5279b718ce41e716e395cf
 day05/untitled/.idea/sonarlint/issuestore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138
 day05/untitled/.idea/sonarlint/issuestore/5/3/53e4bdcaee4c1f86981dbb6537fdb2a78c64fc50
 day05/untitled/.idea/sonarlint/issuestore/3/b/3bf3b5a2dba401fedd021a6b77847394910ca08e
-day05/untitled/src/Main.java
 day06/day06/.idea/sonarlint/issuestore/0/4/04576424c58bbd5fdba392586cf456be65bf5f1b
 day06/day06/.idea/sonarlint/issuestore/0/d/0d441f666099af924063e00960876bf5c0f226f9
 day06/day06/.idea/sonarlint/issuestore/2/1/21b7ed3a4038c5528cda82e186e3e538335b8232
@@ -160,6 +158,5 @@ day08/day08/.idea/sonarlint/issuestore/c/1/c17126932fe1e27a3b96fa4208722028d77fb
 /day08/day08/.idea/sonarlint/securityhotspotstore/c/1
 /day08/day08/.idea/sonarlint/issuestore/e/2
 /day08/day08/.idea/sonarlint/securityhotspotstore/e/2
-*.java
 day04/untitled/out/production/untitled/Sty01.class
 day04/untitled/out/production/untitled/Main.class
