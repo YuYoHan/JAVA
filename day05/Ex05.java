@@ -1,0 +1,12 @@
+class Ex05 
+{
+	public static void main(String[] args) 
+	{
+		String data;
+		data = "Hello";
+		// System.out.println(data.charAt(0));
+		for (int i = 0; i < data.length(); i++){
+			System.out.println(data.charAt(i));
+		}
+	}
+}

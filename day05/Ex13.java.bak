@@ -1,0 +1,25 @@
+import java.util.Scanner;
+import java.util.Arrays;
+class Ex13 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] ans = new int[10];
+		int[] ansKey = {2, 3, 4, 1, 1, 3, 2, 2, 4,1};
+		int result = 0, result2 = 0;
+
+		for (int i = 0;i < ans.length ;i++ )
+		{
+			System.out.println("정답을 적어주세요");
+			ans[i] = sc.nextInt();
+		}
+		for (int i = 0;i < ansKey.length ;i++ ){
+			if(Arrays.toString(ans).equals(ansKey[i])) {
+					result++;
+				} else {
+					result2++;
+				}
+		}
+		System.out.println("정답 수 : " + result);
+		System.out.println("오답 수 : " + result2);
+	}
+}
