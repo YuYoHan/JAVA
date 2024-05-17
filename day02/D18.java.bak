@@ -1,0 +1,12 @@
+class D14 
+{
+	public static void main(String[] args) 
+	{
+		double data1;
+		data1 = 5/2;
+		System.out.println(div);
+		// 5 : int 2 : int 
+		// int와 int를 저장하니까 저장한 결과가 int
+		// 5/2 결과는 정수/정수 했기 때문에 2입니다.
+	}
+}
