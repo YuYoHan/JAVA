@@ -1,0 +1,17 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Ex02 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("가장 중요한 5가지");
+        String[] data = new String[5];
+
+        for (int i = 0; i < data.length; i++) {
+            System.out.println(i + 1 + "번째 입력하세요 ==> ");
+            data[i] = sc.next();
+        }
+        System.out.println("---------- 결과 -------------");
+        System.out.println("결과값 : " + Arrays.toString(data));
+    }
+}
