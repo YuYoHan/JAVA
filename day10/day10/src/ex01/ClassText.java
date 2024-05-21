@@ -1,4 +1,4 @@
-package review;
+package ex01;
 
 import project.ClassRoom;
 import project.Student;

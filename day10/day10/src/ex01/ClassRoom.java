@@ -1,4 +1,4 @@
-package review;
+package ex01;
 
 /* 2.
  * ClassRoom 라는 클래스를 만들고

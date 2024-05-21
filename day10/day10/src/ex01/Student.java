@@ -1,4 +1,4 @@
-package review;
+package ex01;
 
 /* 1.
  * Student 라는 클래스를 만들고 사용하는 예제

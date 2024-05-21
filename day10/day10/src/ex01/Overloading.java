@@ -1,4 +1,4 @@
-package day10;
+package ex01;
 
 public class Overloading {
 	String name;
