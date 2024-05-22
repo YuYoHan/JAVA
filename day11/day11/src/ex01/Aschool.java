@@ -1,4 +1,4 @@
-package review;
+package ex01;
 // 1-4
 public class Aschool {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package review;
+package ex01;
 /*
  * 자바2-1 과제 목표
  * 	객체지향 프로그래밍

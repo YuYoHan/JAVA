@@ -1,4 +1,4 @@
-package review;
+package ex01;
 // 1-1
 class Human {
 	char type; // 성별  // 멤버 변수
