@@ -1,4 +1,4 @@
-package ex06;
+package grimpan;
 
 public class GrimpanTest {
     public static void main(String[] args) {

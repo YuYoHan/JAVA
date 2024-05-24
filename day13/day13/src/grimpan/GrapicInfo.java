@@ -1,4 +1,4 @@
-package ex06;
+package grimpan;
 
 import java.awt.*;
 

@@ -1,4 +1,4 @@
-package ex06;
+package grimpan;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -20,7 +20,7 @@ public class DrawPanel extends Panel implements MouseListener {
     public void paint(Graphics g) {
         int x, y, width, height;
 
-        g.setColor(this.color);
+
 
         //info에 들어 있는 drawType에 따라
         //해당 그래픽(선,사각형,원)을 그리도록 코드를 수정합니다.
@@ -33,11 +33,13 @@ public class DrawPanel extends Panel implements MouseListener {
             if (info.getX2() < info.getX1()) {
                 x = info.getX2();
                 width = info.getX1() - info.getX2();
+                g.setColor(this.color);
             }
 
             if (info.getY2() < info.getY1()) {
                 y = info.getY2();
                 height = info.getY1() - info.getY2();
+                g.setColor(this.color);
             }
 
             switch (info.getDrawType()) {

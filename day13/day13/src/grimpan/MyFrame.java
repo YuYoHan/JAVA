@@ -1,8 +1,6 @@
-package ex06;
+package grimpan;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MyFrame extends Frame {
     // MyFrame이 LinePanel을 가지고 있다.
@@ -52,48 +50,30 @@ public class MyFrame extends Frame {
         // 메뉴 이벤트를 등록한다.
 
         // 자바에서는 클래스안에 클래스를 만들 수 있다. (Inner Class)
-        draw_line.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("선 그리기");
-                dp.drawType = 0;
-            }
+        draw_line.addActionListener(e -> {
+            System.out.println("선 그리기");
+            dp.drawType = 0;
         });
-        draw_rect.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("사각형 그리기");
-                dp.drawType = 1;
-            }
+        draw_rect.addActionListener(e -> {
+            System.out.println("사각형 그리기");
+            dp.drawType = 1;
         });
-        draw_over.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("원 그리기");
-                dp.drawType = 2;
-            }
+        draw_over.addActionListener(e -> {
+            System.out.println("원 그리기");
+            dp.drawType = 2;
         });
 
-        color_red.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("빨강색");
-                dp.color = Color.RED;
-            }
+        color_red.addActionListener(e -> {
+            System.out.println("빨강색");
+            dp.color = Color.RED;
         });
-        color_blue.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("파랑색");
-                dp.color = Color.BLUE;
-            }
+        color_blue.addActionListener(e -> {
+            System.out.println("파랑색");
+            dp.color = Color.BLUE;
         });
-        color_green.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("초록색");
-                dp.color = Color.GREEN;
-            }
+        color_green.addActionListener(e -> {
+            System.out.println("초록색");
+            dp.color = Color.GREEN;
         });
     }
 }
