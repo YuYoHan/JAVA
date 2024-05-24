@@ -1,8 +1,10 @@
 package grimpan;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public class GrapicInfo {
+// 직렬화 해준다.
+public class GrapicInfo implements Serializable {
     private int x1;
     private int y1;
     private int x2;

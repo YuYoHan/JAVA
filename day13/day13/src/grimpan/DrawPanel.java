@@ -3,16 +3,17 @@ package grimpan;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class DrawPanel extends Panel implements MouseListener {
     int x1, y1, x2, y2;
-    LinkedList<GrapicInfo> list;
+    ArrayList<GrapicInfo> list;
     int drawType; // 0: 선 1: 사각형 2: 원
     Color color;
 
     public DrawPanel() {
-        list = new LinkedList<>();
+        list = new ArrayList<>();
         addMouseListener(this);
     }
 
@@ -20,11 +21,10 @@ public class DrawPanel extends Panel implements MouseListener {
     public void paint(Graphics g) {
         int x, y, width, height;
 
-
-
         //info에 들어 있는 drawType에 따라
         //해당 그래픽(선,사각형,원)을 그리도록 코드를 수정합니다.
         for (GrapicInfo info : list) {
+            g.setColor(info.getColor());
             x = info.getX1();
             y = info.getY1();
             width = info.getX2() - info.getX1();
@@ -33,13 +33,11 @@ public class DrawPanel extends Panel implements MouseListener {
             if (info.getX2() < info.getX1()) {
                 x = info.getX2();
                 width = info.getX1() - info.getX2();
-                g.setColor(this.color);
             }
 
             if (info.getY2() < info.getY1()) {
                 y = info.getY2();
                 height = info.getY1() - info.getY2();
-                g.setColor(this.color);
             }
 
             switch (info.getDrawType()) {
