@@ -1,4 +1,4 @@
-package j2day3;
+package ex01;
 
 class Car {
 	private String name; // 차이름

@@ -1,4 +1,4 @@
-package j2day2;
+package ex01;
 // 2-1
 // 추상 클래스(상속 전용이야) → 선배, 고급 개발자들이 설계
 public abstract class Human {

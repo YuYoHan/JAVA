@@ -1,4 +1,4 @@
-package j2day3;
+package ex01;
 
 class Animal {
 	public void print() {

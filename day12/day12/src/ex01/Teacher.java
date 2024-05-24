@@ -1,4 +1,4 @@
-package j2day2;
+package ex01;
 // 2-3
 public class Teacher extends Human {
 
