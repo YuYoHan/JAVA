@@ -1,4 +1,4 @@
- package j2day5;
+ package ex01;
 
  class User {
 	 int id;

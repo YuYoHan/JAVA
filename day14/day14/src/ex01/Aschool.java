@@ -1,4 +1,4 @@
-package review;
+package ex01;
 
 import review.Boss;
 import review.Student;

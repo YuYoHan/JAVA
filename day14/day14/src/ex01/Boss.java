@@ -1,4 +1,4 @@
-package review;
+package ex01;
 
 // Boss 클래스의 부모는 Teacher
 // 인터페이스를 상속(구현)하는 방법 implements SpecialJob

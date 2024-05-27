@@ -1,4 +1,4 @@
-package review;
+package ex01;
 /*
  * 4차 프로젝트 과제 목표
  * 	인터페이스

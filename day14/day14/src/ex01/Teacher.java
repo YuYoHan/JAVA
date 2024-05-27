@@ -1,4 +1,4 @@
-package review;
+package ex01;
 
 
 public class Teacher extends Human {
