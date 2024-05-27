@@ -1,8 +1,5 @@
 package ex01;
 
-import review.Boss;
-import review.Student;
-import review.Teacher;
 
 public class Aschool {
 	public static void main(String[] args) {

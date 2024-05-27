@@ -2,7 +2,6 @@ package ex01;
 
 import java.util.Arrays;
 
-import project.Human;
 
 public class Student extends Human {
 	// final 키워드는 상수로 만들기 위한 키워드이다.

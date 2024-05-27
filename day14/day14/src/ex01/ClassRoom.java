@@ -1,7 +1,5 @@
 package ex01;
 
-import review.Student;
-import review.Teacher;
 
 //학급 클래스로 선생님 객체와 학생 객체들을 가지고 있는 클래스이다.
 public class ClassRoom {
