@@ -1,5 +1,3 @@
-package review;
-
 public class Boss extends Teacher implements SpecialJob {
 	final static String JOB = "교장선생님";
 	final static String SCHOOL = "코리아IT학교";

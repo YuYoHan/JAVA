@@ -1,5 +1,3 @@
-package review;
-
 // 추상 클래스
 abstract class Human {
 	private char type; // 성별

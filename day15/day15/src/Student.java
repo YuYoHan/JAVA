@@ -1,5 +1,3 @@
-package review;
-
 import java.util.Arrays;
 
 public class Student extends Human {

@@ -1,5 +1,3 @@
-package review;
-
 public interface SpecialJob {
 	public abstract int getJobLevel();
 	public abstract String getJobName();

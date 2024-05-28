@@ -1,5 +1,3 @@
-package j2day6;
-
 public class WrapperExam {
 	public static void main(String[] args) {
 		// Boxing

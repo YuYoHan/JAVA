@@ -1,5 +1,3 @@
-package review;
-
 public class Aschool {
 	public static void main(String[] args) {
 		// 테스트를 위한 객체 3개를 만들자. 

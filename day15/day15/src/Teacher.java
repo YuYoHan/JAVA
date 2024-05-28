@@ -1,5 +1,3 @@
-package review;
-
 public class Teacher extends Human {
 	final static String JOB = "선생님";
 	// 멤버 변수

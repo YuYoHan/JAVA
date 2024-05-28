@@ -1,4 +1,4 @@
-package review;
+
 /*
  * 5차 프로젝트 과제 목표
  * 	Object 클래스

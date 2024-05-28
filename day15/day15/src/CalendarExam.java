@@ -1,5 +1,3 @@
-package j2day6;
-
 import java.util.Calendar;
 
 public class CalendarExam {

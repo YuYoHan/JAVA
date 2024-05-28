@@ -1,5 +1,3 @@
-package j2day6;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
