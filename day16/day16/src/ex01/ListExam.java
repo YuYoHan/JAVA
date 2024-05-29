@@ -1,4 +1,4 @@
-package j2day7;
+package ex01;
 
 import java.util.ArrayList;
 import java.util.Arrays;
