@@ -20,7 +20,8 @@ public class TVARSTest {
         p3.start();
         p4.start();
         p5.start();
-        
+
+        // 쓰레드가 전부 끝나고 난 다음
         try {
             p1.join();
             p2.join();
@@ -32,7 +33,6 @@ public class TVARSTest {
         }
 
         // 전체 모금액을 출력한다.
-        // 현재는 0원이 나온다.
         System.out.println(account.getBalance());
     }
 }
