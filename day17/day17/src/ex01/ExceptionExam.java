@@ -1,6 +1,4 @@
-package j2day8;
-
-import java.io.IOException;
+package ex01;
 
 public class ExceptionExam {
 	public static void main(String[] args) {

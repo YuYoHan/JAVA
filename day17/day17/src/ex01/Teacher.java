@@ -1,4 +1,4 @@
-package project;
+package ex01;
 
 public class Teacher extends Human {
 	final static String JOB = "선생님";

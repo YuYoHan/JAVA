@@ -1,4 +1,4 @@
-package project;
+package ex01;
 
 public class Boss extends Teacher implements SpecialJob {
 	final static String JOB = "교장선생님";

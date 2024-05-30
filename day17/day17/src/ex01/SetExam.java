@@ -1,8 +1,7 @@
-package day18;
+package ex01;
 
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
 
 public class SetExam {
 	public static void main(String[] args) {

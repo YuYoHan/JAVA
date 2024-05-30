@@ -1,4 +1,4 @@
-package project;
+package ex01;
 
 public interface SpecialJob {
 	public abstract int getJobLevel();

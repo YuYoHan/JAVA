@@ -1,4 +1,4 @@
-package project;
+package ex01;
 
 // 추상 클래스
 abstract class Human {
