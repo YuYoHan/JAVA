@@ -2,47 +2,56 @@ package ex05;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Set;
 
 public class RepairShop extends JFrame {
-    LinkedHashMap<String, Integer> map;
-    JCheckBox[] jcb;
+    String[] item = {"엔진 오일 교환", "자동 변속기 오일 교환", "에어콘 필터 교환", "타이어 교환"};
+    int[] price = {45000, 80000, 30000, 100000};
+    JCheckBox[] jcb = new JCheckBox[4];
+    JLabel jlb;
 
+    public void calcPrice() {
+        int tot = 0;
+        for (int i = 0; i < jcb.length; i++) {
+            if (jcb[i].isSelected()) {
+                tot += price[i];
+            }
+        }
+
+        jlb.setText(tot + "원");
+    }
 
     public RepairShop() {
+        setLayout(new BorderLayout());
         JPanel p_center = new JPanel();
-        p_center.setLayout(new GridLayout(6, 2));
+        JPanel p_down = new JPanel();
+        p_center.setLayout(new GridLayout(5, 2));
+
         p_center.add(new JLabel("수리"));
         p_center.add(new JLabel("가격(원)"));
-
-        map = new LinkedHashMap<>();
-        map.put("엔진 오일 교환", 45000);
-        map.put("자동 변속기 오일 교환", 80000);
-        map.put("에어컨 필터 교환", 30000);
-        map.put("타이어 교환", 100000);
-
-        jcb = new JCheckBox[map.keySet().size()];
-        Iterator<String> iterator = map.keySet().iterator();
-        int i = 0;
-        while (iterator.hasNext()) {
-            String item = iterator.next();
-            jcb[i] = new JCheckBox(item);
+        for (int i = 0; i < item.length; i++) {
+            jcb[i] = new JCheckBox(item[i]);
             p_center.add(jcb[i]);
-            p_center.add(new JLabel(map.get(item) + ""));
-            jcb[i].addActionListener(e ->{
-                // 눌러진 체크박스가 누군지 알아온다.
-                String actionCommand = e.getActionCommand();
-                System.out.println(actionCommand);
-            });
+            p_center.add(new JLabel(price[i] + ""));
+            jcb[i].addActionListener(e -> calcPrice());
         }
-        add(p_center);
+
+
+        jlb = new JLabel("                ");
+        p_down.add(new JLabel("총금액 : "));
+        p_down.add(jlb);
+
+        add(p_center, BorderLayout.CENTER);
+        add(p_down, BorderLayout.SOUTH);
 
         setSize(400, 300);
         setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public static void main(String[] args) {
