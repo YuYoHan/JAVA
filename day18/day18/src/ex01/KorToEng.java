@@ -19,14 +19,18 @@ public class KorToEng extends JFrame {
         JPanel p1 = new JPanel();
         JPanel p2 = new JPanel();
         // 패널 레이아웃 설정
-        p1.setLayout(new GridLayout(1, 2));
+        p1.setLayout(new GridLayout(1, 2, 10, 10));
         p2.setLayout(new FlowLayout(FlowLayout.CENTER));
+
+        JScrollPane jsp01 = new JScrollPane(txt01);
+        JScrollPane jsp02 = new JScrollPane(txt02);
+
         // 패널에 글 넣기
-        p1.add(txt01);
-        p1.add(txt02);
+        p1.add(jsp01);
+        p1.add(jsp02);
         // 패널에 버튼 추가
-        p1.add(change);
-        p1.add(cancel);
+        p2.add(change);
+        p2.add(cancel);
 
         setLayout(new BorderLayout());
         add(p1, BorderLayout.CENTER);
