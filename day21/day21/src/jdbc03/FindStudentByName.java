@@ -1,13 +1,18 @@
-package jdbc01;
+package jdbc03;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Scanner;
 
-public class ListStudent {
+public class FindStudentByName {
     public static void main(String[] args) {
-        String sql = "select * from student";
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter student name: ");
+        String name = sc.next();
+
+        String sql = "select * from student where NAME = '"+name+"'";
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -26,7 +31,7 @@ public class ListStudent {
             // 4. 명령어 실행 담당자를 통해서 데이터베이스 명령을 실행
             rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                String name = rs.getString(1);
+                name = rs.getString(1);
                 int kor = rs.getInt(2);
                 int eng = rs.getInt(3);
                 int math = rs.getInt(4);
@@ -34,10 +39,10 @@ public class ListStudent {
             }
 
         } catch (Exception e) {
-            System.out.println("예외 발생 : " +e.getMessage());
+            System.out.println("예외 발생 : " + e.getMessage());
         } finally {
             try {
-                if(rs != null) {
+                if (rs != null) {
                     rs.close();
                 }
                 if (stmt != null) {

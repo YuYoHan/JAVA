@@ -30,6 +30,7 @@ public class InsertStudentGUI extends JFrame {
         add(new JLabel("수학"));
         add(jtf_math);
 
+
         JButton button = new JButton("등록");
         button.addActionListener(new ActionListener() {
             @Override
@@ -78,6 +79,9 @@ public class InsertStudentGUI extends JFrame {
                 }
             }
         });
+        setSize(500, 300);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     public static void main(String[] args) {
