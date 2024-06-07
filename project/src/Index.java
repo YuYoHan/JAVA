@@ -110,6 +110,7 @@ public class Index extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("회원정보 메뉴를 선택하였습니다.");
+                dispose();
                 new UserInfo(Index.this);
             }
         });
@@ -118,7 +119,8 @@ public class Index extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("차량검색 메뉴를 선택하였습니다.");
-
+                dispose();
+                new Board(Index.this);
             }
         });
 
@@ -126,6 +128,8 @@ public class Index extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("커뮤니티 메뉴를 선택하였습니다.");
+                dispose();
+                new Car(Index.this);
             }
         });
 

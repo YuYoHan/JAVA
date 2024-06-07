@@ -14,19 +14,19 @@ public class DBConnection {
             try {
                 // JDBC 드라이버를 메모리로 로드
                 // mysql 버전
-                Class.forName("com.mysql.cj.jdbc.Driver");
+//                Class.forName("com.mysql.cj.jdbc.Driver");
                 // 오라클 버전
-//                Class.forName("oracle.jdbc.driver.OracleDriver");
+                Class.forName("oracle.jdbc.driver.OracleDriver");
 
                 // 2. DB 서버에 연결
                 // mysql
-                String url = "jdbc:mysql://localhost:3306/java_project02";
-                String user = "root";
-                String password = "1234";
+//                String url = "jdbc:mysql://localhost:3306/java_project02";
+//                String user = "root";
+//                String password = "1234";
                 // oracle
-//                String url = "jdbc:oracle:thin:@localhost:1521:XE";
-//                String username = "c##madang";
-//                String password = "madang";
+                String url = "jdbc:oracle:thin:@localhost:1521:XE";
+                String user = "c##madang";
+                String password = "madang";
                 conn = DriverManager.getConnection(url, user, password);
                 // 3. 데이터베이스 명령어 실행 담당자 객체를 생성
                 stmt = conn.createStatement();
