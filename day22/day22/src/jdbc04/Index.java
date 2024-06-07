@@ -1,3 +1,5 @@
+package jdbc04;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -118,7 +120,7 @@ public class Index extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("차량검색 메뉴를 선택하였습니다.");
                 dispose();
-                new Board(Index.this);
+//                new Goods(Index.this);
             }
         });
 
