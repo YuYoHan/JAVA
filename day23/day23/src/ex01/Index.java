@@ -1,5 +1,7 @@
 package ex01;
 
+import ex02.Login;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -80,7 +82,7 @@ public class Index extends JFrame {
 
         // JLabel을 사용하여 여러 줄의 텍스트 표시
         JLabel jLabel =
-                new JLabel("<html>" + name + "님 안녕하세요.<br>KOSTA 게시글입니다.</html>", SwingConstants.CENTER);
+                new JLabel("<html>" + name + "님 안녕하세요.<br> 게시글입니다.</html>", SwingConstants.CENTER);
         jLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         setBackground(Color.CYAN);
 

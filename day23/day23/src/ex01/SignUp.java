@@ -1,14 +1,13 @@
 package ex01;
 
 
-import ex01.dao.UserDAO;
-import ex01.dto.UserDTO;
+import ex02.UserDAO;
+import ex02.UserDTO;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,10 +17,8 @@ public class SignUp extends JFrame {
     private JTextField addr;
     private JPasswordField passwordField;
     private JPasswordField confirmPasswordField;
-    private Index mainFrame;
 
     public SignUp(Index mainFrame) {
-        this.mainFrame = mainFrame;
         // 회원가입 폼을 구현할 패널 생성
         JPanel panel = new JPanel(new GridLayout(5, 2, 10, 10));
         JPanel panel2 = new JPanel();

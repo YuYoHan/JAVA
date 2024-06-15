@@ -1,22 +1,18 @@
-package ex01;
+package ex02;
 
 
-import ex01.dao.UserDAO;
-import ex01.dto.UserDTO;
+import ex01.Session;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
 
 public class Login extends JFrame {
     private JTextField idField;
     private JPasswordField passwordField;
-    private Index mainFrame;
 
-    public Login(Index mainFrame) {
-        this.mainFrame = mainFrame;
+    public Login(Index mainPage) {
 
         // 로그인 폼을 구현할 패널 생성
         JPanel panel = new JPanel(new GridLayout(3, 2, 10, 10));
@@ -49,27 +45,24 @@ public class Login extends JFrame {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // 아이디와 비밀번호 가져오기
-                String name = idField.getText();
-                System.out.println(name);
+                String loginId = idField.getText();
+                System.out.println("아이디 체크 : " + loginId);
+                UserDTO select = UserDAO.select(loginId);
+                System.out.println("유저 정보 확인 : " + select);
                 String password = new String(passwordField.getPassword());
-                System.out.println(password);
 
-                UserDTO user = new UserDTO();
-                user.setUserName(name);
-                user.setUserPw(password);
-                System.out.println(user);
-
-                int insert = UserDAO.insert(user);
-                System.out.println(insert);
-                if (insert > 0) {
-                    System.out.println("로그인 성공");
-                    Session.getInstance().setLoggedInUserId(name); // 로그인한 사용자 ID 저장
-                    dispose(); // 현재 창 닫기
-                    mainFrame.showBoard(); // 게시판 창 보여주기
+                String encodePw = PasswordEncode.encode(password);
+                // SHA-256과 같은 해시 알고리즘은 일반적으로 동일한 입력값에 대해 항상 동일한 해시값을 생성
+                if (encodePw.equals(select.getUserPw())) {
+                    SessionManager.loginUser(loginId);
+                    JOptionPane.showMessageDialog(null, "로그인 성공!");
+                    dispose();
+                    mainPage.afterLogin();
                 } else {
-                    System.out.println("로그인 실패");
-                    JOptionPane.showMessageDialog(Login.this, "로그인에 실패하였습니다.");
+                    SessionManager.loginUser(null);
+                    JOptionPane.showMessageDialog(null,"로그인 실패!");
+                    dispose();
+                    mainPage.setVisible(true);
                 }
             }
         });
@@ -78,7 +71,7 @@ public class Login extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose(); // 현재 창 닫기
-                mainFrame.setVisible(true); // 메인 창 다시 보이기
+                mainPage.setVisible(true); // 메인 창 다시 보이기
             }
         });
     }

@@ -2,8 +2,8 @@ package ex01;
 
 
 
-import ex01.dao.UserDAO;
-import ex01.dto.UserDTO;
+import ex02.UserDAO;
+import ex02.UserDTO;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,46 +12,43 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Vector;
 
 public class UserInfo extends JFrame{
-    private JTextField name;
-    private JTextField password;
-    private JTextField userPhone;
-    private JTextField userAddr;
+    private JTextField userLoginId;
+    private JTextField userPassword;
+    private JTextField userEmail;
+    private JTextField userNickName;
     private Vector<String> colNames;
     private Vector<Vector<String>> rowData;
     private JTable table;
-    private String selectedName;
-    Index mainFrame;
+    private String selectedId;
 
-    public UserInfo(Index mainFrame) {
-        this.mainFrame = mainFrame;
-        name = new JTextField(5);
-        password = new JTextField(7);
-        userPhone = new JTextField(7);
-        userAddr = new JTextField(10);
+    public UserInfo(Index mainPage) {
+        userLoginId = new JTextField(5);
+        userPassword = new JTextField(7);
+        userEmail = new JTextField(7);
+        userNickName = new JTextField(10);
 
         JPanel p = new JPanel();
-        p.add(new JLabel("이름"));
-        p.add(name);
+        p.add(new JLabel("아이디"));
+        p.add(userLoginId);
         p.add(new JLabel("비밀번호"));
-        p.add(password);
-        p.add(new JLabel("폰번호"));
-        p.add(userPhone);
-        p.add(new JLabel("주소"));
-        p.add(userAddr);
+        p.add(userPassword);
+        p.add(new JLabel("이메일"));
+        p.add(userEmail);
+        p.add(new JLabel("닉네임"));
+        p.add(userNickName);
 
         JButton btnUpdate = new JButton("수정");
         JButton btnCancel = new JButton("취소");
         p.add(btnUpdate);
         p.add(btnCancel);
         colNames = new Vector<>();
-        colNames.add("이름");
+        colNames.add("아이디");
         colNames.add("비밀번호");
-        colNames.add("폰번호");
-        colNames.add("주소");
+        colNames.add("이메일");
+        colNames.add("닉네임");
         rowData = new Vector<>();
         table = new JTable(rowData, colNames);
         JScrollPane jsp = new JScrollPane(table);
@@ -83,7 +80,7 @@ public class UserInfo extends JFrame{
                 Vector<String> row = rowData.get(idx);
                 // 갖고온 벡터로 부터 이름을 뽑아온다.
                 System.out.println(row.get(0));
-                selectedName = row.get(0);
+                selectedId = row.get(0);
             }
 
             @Override
@@ -104,9 +101,9 @@ public class UserInfo extends JFrame{
                 rowData.clear();
                 UserDTO user = new UserDTO();
 
-                user.setUserPw(password.getText());
-                user.setUserAddr(userAddr.getText());
-                user.setUserPhone(userPhone.getText());
+                user.setUserPw(use.getText());
+                user.setUserEmail(userAddr.getText());
+                user.setNickName(userPhone.getText());
                 System.out.println(user);
             }
         });
@@ -115,7 +112,7 @@ public class UserInfo extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                mainFrame.showBoard();
+                mainPage.showBoard();
             }
         });
     }
@@ -123,16 +120,15 @@ public class UserInfo extends JFrame{
     public void loadUser() {
         //JTable에 출력하는 메소드
         rowData.clear();
-        ArrayList<UserDTO> userDTOS = UserDAO.selectAll();
+        String selected = selectedId;
+        UserDTO select = UserDAO.select(selected);
         Vector<String> v = new Vector<>();
-        for (UserDTO userDTO : userDTOS) {
-            v.add(userDTO.getUserId() + "");
-            v.add(userDTO.getUserName());
-            v.add(userDTO.getUserPw());
-            v.add(userDTO.getUserAddr());
-            v.add(userDTO.getUserPhone());
-            rowData.add(v);
-        }
+        v.add(select.getUserId() + "");
+        v.add(select.getUserLoginID());
+        v.add(select.getUserPw());
+        v.add(select.getUserEmail());
+        v.add(select.getNickName());
+        rowData.add(v);
         table.updateUI();
     }
 }
