@@ -81,5 +81,16 @@ public class Index extends JFrame {
             }
         });
 
+        revalidate(); // 변경된 GUI를 다시 그리도록 갱신
+
+        // JFrame 설정
+        setSize(400, 300);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+    }
+
+    public static void main(String[] args) {
+        new Index();
     }
 }

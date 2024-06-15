@@ -11,7 +11,7 @@ public class UserDAO {
     public static ResultSet rs;
     public static ArrayList<UserDTO> userList = new ArrayList<>();
 
-    // 상품 등록
+    // 유저 등록
     public static int insert(UserDTO user) {
 //        String sql = "insert into users (user_login_id, user_pw, user_email, nickName) values ("
 //                + "'" + user.getUserLoginID() + "', "
@@ -22,7 +22,7 @@ public class UserDAO {
         return connectDB(sql, user);
     }
 
-    // 상품 수정
+    // 유저 수정
     public static int update(UserDTO user, int userId) {
 //        String sql = "update users set " +
 //                "user_pw = '" + user.getUserPw() + "', " +
@@ -33,7 +33,7 @@ public class UserDAO {
         return connectDB(sql, user, userId);
     }
 
-    // 상품 삭제
+    // 유저 삭제
     public static int delete(int userId) {
         String sql = "DELETE FROM users WHERE user_id = ?";
         return connectDB(sql, userId);
