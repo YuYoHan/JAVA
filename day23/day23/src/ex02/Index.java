@@ -26,12 +26,10 @@ public class Index extends JFrame {
         jPanel2.add(signUpButton);
         JButton loginButton = new JButton("로그인");
         jPanel2.add(loginButton);
-        JButton exitButton = new JButton("나가기");
-        jPanel2.add(exitButton);
 
         setLayout(new BorderLayout());
         add(jPanel, BorderLayout.CENTER);
-        add(jPanel2, BorderLayout.SOUTH);
+        add(jPanel2, BorderLayout.NORTH);
 
         setSize(400, 300);
         setVisible(true);
@@ -53,13 +51,6 @@ public class Index extends JFrame {
                 setVisible(false); // 현재 창 숨기기
             }
         });
-        // 나가기
-        exitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose(); // 현재 윈도우를 닫음
-            }
-        });
     }
     // 로그인 후 보이는 창
     public void afterLogin() {
@@ -69,7 +60,20 @@ public class Index extends JFrame {
         System.out.println("현재 접속중인 닉네임 : " + currentUser);
 
         JButton logout_button = new JButton("로그아웃");
+        JButton myInfo_button = new JButton("내정보보기");
+        JButton board_button = new JButton("게시물");
 
+        JPanel jPanel = new JPanel();
+        jPanel.add(logout_button);
+        jPanel.add(myInfo_button);
+        jPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        setLayout(new BorderLayout());
+        add(jPanel, BorderLayout.NORTH);
+
+        JPanel jPanel2 = new JPanel();
+        jPanel2.setLayout(new FlowLayout(FlowLayout.CENTER));
+        jPanel2.add(board_button);
+        add(jPanel2, BorderLayout.CENTER);
 
         logout_button.addActionListener(new ActionListener() {
             @Override
@@ -78,6 +82,17 @@ public class Index extends JFrame {
                 SessionManager.logoutUser();
                 dispose(); // 현재 윈도우를 닫음
                 setVisible(true);
+            }
+        });
+
+        board_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("게시글 메뉴를 선택하였습니다.");
+                boolean check = SessionManager.isLoggedIn();
+                if(check) {
+                    return;
+                }
             }
         });
 
